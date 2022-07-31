@@ -4,11 +4,11 @@ import * as actionTypes from '../constants';
 const initialState = {
   loading: false,
   error: null,
-  token: localStorage.getItem(actionTypes.AUTH_TOKEN || ''),
-  userId: localStorage.getItem(actionTypes.AUTH_TOKEN_ID || ''),
-  user: null,
-    // ? JSON.parse(localStorage.getItem(actionTypes.AUTH_USER) || '')
-    // : null,
+  token: localStorage.getItem(actionTypes.AUTH_TOKEN),
+  userId: localStorage.getItem(actionTypes.AUTH_TOKEN_ID),
+  user: localStorage.getItem(actionTypes.AUTH_USER)
+    ? JSON.parse(localStorage.getItem(actionTypes.AUTH_USER) || '')
+    : null,
 }
 
 const key = actionTypes.KEY;
